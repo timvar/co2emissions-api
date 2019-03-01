@@ -17,11 +17,13 @@ public class Co2emissionController {
     @Autowired
     private Co2emissionRepository co2emissionRepository;
 
+    @CrossOrigin
     @GetMapping(value = "/{country}", produces = "application/json")
     public Iterable<Co2emission> getCo2emissions(@PathVariable String country) {
         return co2emissionRepository.findAllByCountry(country);
     }
 
+    @CrossOrigin
     @PostMapping("/{country}")
     public Iterable<Co2emission> postCo2emissions(@PathVariable String country, @RequestBody Iterable<Co2emission> co2emissions ) {
 
