@@ -1,17 +1,17 @@
 package ohteproject.co2emissionsapi.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
+@IdClass(Co2emissionPK.class)
 public class Co2emission {
 
+    //@Id
+    //@GeneratedValue(strategy = GenerationType.AUTO)
+    //private Long emissionId;
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long emissionId;
     private String country;
+    @Id
     private int year;
     private double co2emission;
 
@@ -29,6 +29,7 @@ public class Co2emission {
         this.co2emission = co2emission;
     }
 
+    /*
     public Long getEmissionId() {
         return emissionId;
     }
@@ -36,7 +37,7 @@ public class Co2emission {
     public void setEmissionId(Long emissionId) {
         this.emissionId = emissionId;
     }
-
+*/
     public String getCountry() {
         return country;
     }

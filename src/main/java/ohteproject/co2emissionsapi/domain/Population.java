@@ -1,22 +1,23 @@
 package ohteproject.co2emissionsapi.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
+@IdClass(PopulationPK.class)
 public class Population {
 
+    //@Id
+    //@GeneratedValue(strategy = GenerationType.AUTO)
+    //private Long populationId;
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long populationId;
     private String country;
+    @Id
     private int year;
     private Long population;
 
     public Population() {
     }
+
 
     public Population(String country, int year, Long population) {
         this.country = country;
@@ -24,7 +25,7 @@ public class Population {
         this.population = population;
     }
 
-
+/*
     public Long getPopulationId() {
         return populationId;
     }
@@ -32,7 +33,7 @@ public class Population {
     public void setPopulationId(Long populationId) {
         this.populationId = populationId;
     }
-
+*/
 
     public String getCountry() {
         return country;
