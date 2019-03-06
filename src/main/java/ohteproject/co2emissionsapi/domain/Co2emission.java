@@ -2,13 +2,16 @@ package ohteproject.co2emissionsapi.domain;
 
 import javax.persistence.*;
 
+/**
+ * Database entity for storing CO2 emission data (country, year, CO2 emission)
+ *
+ * Primary key: country, year
+ */
+
 @Entity
 @IdClass(Co2emissionPK.class)
 public class Co2emission {
 
-    //@Id
-    //@GeneratedValue(strategy = GenerationType.AUTO)
-    //private Long emissionId;
     @Id
     private String country;
     @Id
@@ -29,15 +32,6 @@ public class Co2emission {
         this.co2emission = co2emission;
     }
 
-    /*
-    public Long getEmissionId() {
-        return emissionId;
-    }
-
-    public void setEmissionId(Long emissionId) {
-        this.emissionId = emissionId;
-    }
-*/
     public String getCountry() {
         return country;
     }

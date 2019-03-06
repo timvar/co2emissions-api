@@ -8,6 +8,12 @@ import org.springframework.web.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * REST API populations/country (FIN, SWE, NOR,...)
+ *
+ * e.g. populations/FIN
+ */
+
 @RestController
 @RequestMapping("populations")
 public class PopulationController {
@@ -15,11 +21,25 @@ public class PopulationController {
     @Autowired
     private PopulationRepository populationRepository;
 
+    /**
+     * GET
+     * @param country (FIN, SWE, NOR,...)
+     * @return
+     */
+
     @CrossOrigin
     @GetMapping(value = "/{country}", produces = "application/json")
     public Iterable<Population> getPopulation(@PathVariable String country) {
+
         return populationRepository.findAllByCountry(country);
     }
+
+    /**
+     * POST
+     * @param country (FIN, SWE, NOR,...)
+     * @param populations
+     * @return
+     */
 
     @CrossOrigin
     @PostMapping("/{country}")
@@ -37,6 +57,5 @@ public class PopulationController {
         }
 
         return populationList;
-
     }
 }

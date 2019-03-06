@@ -4,6 +4,10 @@ import javax.persistence.Embeddable;
 import java.io.Serializable;
 import java.util.Objects;
 
+/**
+ * Primary key (country, year) for Population data table.
+ */
+
 @Embeddable
 public class PopulationPK implements Serializable{
 

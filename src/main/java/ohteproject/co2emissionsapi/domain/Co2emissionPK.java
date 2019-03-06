@@ -4,6 +4,10 @@ import javax.persistence.Embeddable;
 import java.io.Serializable;
 import java.util.Objects;
 
+/**
+ * Primary key (country, year) for CO2 emission data table
+ */
+
 @Embeddable
 public class Co2emissionPK implements Serializable{
 
